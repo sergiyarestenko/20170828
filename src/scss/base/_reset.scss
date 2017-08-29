@@ -2,16 +2,17 @@
 @import '../utils/_variables';
 
 body {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	font-family: $font-family-main;
 	background-color: $bg-main;
 	height: 100%;
 	line-height: 1;
 	position: relative;
-	font-size: $font-size-main!important;
+	font-size: $font-size-main;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	z-index: 1;
 }
 
 
@@ -40,9 +41,9 @@ q:after {
 
 table {
 	border-collapse: collapse;
-	border-width: 0px;
-	padding: 0px;
-	margin: 0px;
+	border-width: 0;
+	padding: 0;
+	margin: 0;
 }
 
 html {
@@ -53,13 +54,8 @@ html {
 
 input,
 textarea {
-	color: #333;
 	font-family: $font-family-main;
 	outline: none;
-	border-radius: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	-webkit-appearance: none;
 }
 
 input[type="button"],
@@ -69,17 +65,17 @@ button {
 }
 
 td {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 }
 
 form {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 }
 
 a {
-	color: $color-link-main;
+	color: inherit;
 	@include transition($default-transition);
 	text-decoration: none;
 	outline: none;
@@ -113,6 +109,9 @@ button {
 	box-sizing: border-box;
 }
 
+ol,ul{
+	list-style: none;
+}
 .clearfix:after,
 .wrapper:after,
 .row:after{

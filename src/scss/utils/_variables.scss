@@ -1,6 +1,6 @@
 /* common */
 $min-width: 320px; 
-$max-width: 1200px;
+$max-width: 1442px;
 
 
 $default-transition:all 0.5s linear;
@@ -10,7 +10,9 @@ $bg-main: #FFF;
 
 $line-height-main: #171717;
 $color-link-main:blue;
-$color-grey: #b8b8bd;
+$color-grey: #747688;
+$color-middle-grey: #b8b8bd;
+$color-light-grey: #dddfdf;
 $color-gold: #cb944c;
 $color-navy: #2b3056;
 $color-blue: #3eade2;
@@ -21,6 +23,7 @@ $color-black: #181616;
 //fonts
 
 $font-size-main: 14px;
+$font-size-option: 16px;
 $line-height-main:14px;
 $font-family-main: 'PT Sans', sans-serif;
 $font-family-bold: 'PT Sans Bold', sans-serif;
