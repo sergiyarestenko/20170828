@@ -4,12 +4,12 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	font-family: $base-font-family;
-	background-color: $base-bg;
+	font-family: $font-family-main;
+	background-color: $bg-main;
 	height: 100%;
 	line-height: 1;
 	position: relative;
-	font-size: $base-font-size!important;
+	font-size: $font-size-main!important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -54,7 +54,7 @@ html {
 input,
 textarea {
 	color: #333;
-	font-family: $base-font-family;
+	font-family: $font-family-main;
 	outline: none;
 	border-radius: 0;
 	-moz-border-radius: 0;
@@ -79,7 +79,7 @@ form {
 }
 
 a {
-	color: $link-color;
+	color: $color-link-main;
 	@include transition($default-transition);
 	text-decoration: none;
 	outline: none;

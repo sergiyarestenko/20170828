@@ -29,7 +29,6 @@ const browserSync = require('browser-sync').create();
 gulp.task('css',function() {
     return gulp.src(config.paths.sass)
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./css'))
         .pipe(gulp.dest(config.paths.src +'/css'))
         .pipe(autoprefixer())
         .pipe(cleancss({compatibility: 'ie8'}))

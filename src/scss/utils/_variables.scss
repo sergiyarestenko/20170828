@@ -7,7 +7,9 @@ $default-transition:all 0.5s linear;
 
 /*colors*/
 $bg-main: #FFF;
-$color-main: #171717;
+
+$line-height-main: #171717;
+$color-link-main:blue;
 $color-grey: #b8b8bd;
 $color-gold: #cb944c;
 $color-navy: #2b3056;
@@ -19,6 +21,7 @@ $color-black: #181616;
 //fonts
 
 $font-size-main: 14px;
+$line-height-main:14px;
 $font-family-main: 'PT Sans', sans-serif;
 $font-family-bold: 'PT Sans Bold', sans-serif;
 
