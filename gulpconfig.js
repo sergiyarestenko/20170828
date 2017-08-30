@@ -12,7 +12,6 @@ module.exports = {
         sass:"./src/scss/**/**.scss",
         css:"./src/css",
         js: './src/js/**.js',
-        componentsJs: './src/js/components/**.js',
         img: './src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
