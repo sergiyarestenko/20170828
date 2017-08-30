@@ -7,6 +7,9 @@
 .header{
   margin: 30px 100px;
   font-size:$font-size-main;
+  &__mobile{
+    display: none;
+  }
   .row {
     position:relative;
     padding:0 440px 0 305px;
@@ -21,7 +24,6 @@
     background: url('../img/logo_main.png') no-repeat;
     background-size: contain;
     z-index: 2;
-    cursor: pointer;
   }
   h1{
     color:$color-grey;
@@ -124,8 +126,6 @@
     padding-left:30px;
     background: url("../img/menu_icon_gold.png") no-repeat 12px 50%;
     z-index: 50;
-
-
   }
   &__main-menu{
     z-index: 50;
@@ -140,7 +140,8 @@
     li{
       cursor: pointer;
       position: relative;
-        ul li,
+      span,
+      ul li,
         ul li a {
         width: 100%;
       }
@@ -152,19 +153,23 @@
       font-weight:bold;
       padding: 20px 12px;
       &.deeper{
+        position: relative;
+        padding-right:20px;
         &:after{
           content: url("../img/arrow_down_gold.png");
-          position: relative;
-          left: 5px;
-          top: -2px;
+          position: absolute;
+          right: 5px;
+          top: 18px;
         }
-        .deeper{
+        .deepest{
+          z-index: 100;
           &:after{
             content: url("../img/arrow_down_gold.png");
             transform: rotate(270deg);
             position: absolute;
             right: 15px;
             top: 12px;
+            transition: .5s linear;
           }
           span{
             text-transform: uppercase;
@@ -175,7 +180,6 @@
             margin-left: -35px;
             padding-left: 15px;
             cursor: default;
-            z-index: 150;
           }
         }
 
@@ -186,7 +190,6 @@
         transition: 0.5s;
         overflow: hidden;
         width: 245px;
-        background: $bg-main;
         color: $color-deep-grey;
         font-size:$font-size-option;
         font-weight:normal;
@@ -229,8 +232,9 @@
     }
     ul {
       position: absolute;
-      top:65px;
+      top:60px;
       left:-25px;
+      background: $bg-main;
       box-shadow: 2px 2px $color-light-grey;
       ul {
         left: calc(100% + 3px);
@@ -239,6 +243,7 @@
     }
   }
 }
+
 
 
 
@@ -344,19 +349,213 @@
         }
       }
     }
-
     &__main-menu{
       >li{
         padding: 20px 10px;
         font-size:13px;
       }
     }
-
-
-
   }
+
 }
 
 @media screen and (max-width: 767px) {
+  .header{
+    margin: 0;
+    &__mobile{
+      display: block;
+      ul{
+        padding:0;
+        margin:0;
+        background: #f0f1f6;
+        li{
+          display: inline-block;
+          height: 40px;
+          width: 16%;
+          cursor: pointer;
+          &:nth-child(1){
+            background: #3eade2 url("../img/menu_mobile_icon.png") no-repeat 50% 50%;
+          }
+          &:nth-child(2){
+            background: url("../img/home_mobile_icon.png") no-repeat 50% 50%;
+          }
+          &:nth-child(3){
+            background: url("../img/search_mobile_icon.png") no-repeat 50% 50%;
+          }
+          &:nth-child(4){
+            background: url("../img/basket_mobile_icon.png") no-repeat 50% 50%;
+          }
+          &:nth-child(5){
+            background: url("../img/enter_mobile_icon.png") no-repeat 50% 50%;
+          }
+          &:nth-child(6){
+            background: url("../img/callback_mobile_icon.png") no-repeat 50% 50%;
+          }
+          a{
+            display: block;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .row{
+      padding: 0;
+      height: 75px;
+    }
+    &__logo{
+      width: 250px;
+      position: static;
+      top:auto;
+      left: auto;
+      padding-top: 45px;
+      padding-left:20px;
+      background-size: 190px auto;
+      background-position: 20px 15px;
+    }
+    h1{
+      color:$color-grey;
+      font-size:$font-size-main;
+      font-weight:normal;
+      margin-top:auto;
+    }
+    &__search{
+       display: none;
+      &.open{
+        display: block;
+        position: fixed;
+        left: 10%;
+        top: 0;
+        z-index: 501;
+        width: 80%;
+        margin: 25px auto;
+        background: $bg-main;
+        padding: 50px 25px;
+        border-radius: 5px;
 
+      }
+
+    }
+    &__contacts{
+      display: none;
+    }
+    &__basket-enter{
+      display: none;
+      }
+    nav{
+      padding-left:0;
+      width: 245px;
+      border: none;
+      position: absolute;
+      top:40px;
+      z-index: 50;
+      background: $bg-main;
+      height: 0;
+      overflow: hidden;
+      transition: heigth .5s ;
+      &.open{
+        height: auto;
+        box-shadow: 2px 2px $color-light-grey;
+      }
+      }
+    &__main-menu{
+
+      li{
+        ul li,
+        ul li a {
+          width: auto;
+        }
+      }
+      >li{
+        float: none;
+        padding: 15px 10px;
+        &.deeper{
+          &:after{
+            right: 25px;
+          }
+          .deepest{
+            &.open{
+              > ul {
+                padding-top: 10px;
+                > li{
+                width: 220px;
+                height: auto;
+                padding:10px 15px;
+                overflow: hidden;
+                &:first-child{
+                  display: none;
+                }
+              }
+              }
+              &:after{
+                content: url("../img/arrow_down_gold.png");
+                transform: rotate(0deg);
+              }
+            }
+          }
+
+          &.open{
+            > ul > li, > ul > li:hover{
+              height: auto;
+              padding:10px 15px;
+              overflow: hidden;
+            }
+          }
+
+        }
+        > ul > li,
+        > ul > li > ul > li {
+          &:hover{
+            background: inherit;
+          }
+          &:first-child:hover{
+            background: inherit;
+          }
+          &:first-child.deeper:hover{
+            background: inherit;
+          }
+        }
+        > ul > li a{
+          position: relative;
+        }
+        > ul > li a:before{
+          content: url("../img/menu_ring_gold.png");
+          position: absolute;
+          top:-2px;
+          left: -15px;
+        }
+        &:hover > ul > li,
+        > ul > li:hover > ul > li,
+        > ul > li > ul > li:hover > ul > li ,
+        > ul > li,
+        > ul > li > ul > li,
+        > ul > li > ul > li > ul > li {
+          height: 0;
+          padding:0;
+          overflow: hidden;
+        }
+        &:hover > ul,
+        > ul > li:hover > ul,
+        > ul > li > ul > li:hover > ul,
+        > ul,
+        > ul > li > ul,
+        > ul > li > ul > li > ul{
+          border:0;
+          padding-top: 0;
+          padding-bottom:0;
+        }
+
+      }
+      ul {
+        position: static;
+        top:auto;
+        left:auto;
+        box-shadow: none;
+        ul {
+          padding-top: 0;
+          left: auto;
+          top:auto;
+        }
+      }
+    }
+    }
 }

@@ -6,9 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
 	<title>Главная</title>
 
-	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-	<!--// Add the new slick-theme.css if you want the default styling-->
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -24,6 +22,16 @@
 	<!-- BEGIN HEADER -->
 
 		<header class ="header">
+            <div class="header__mobile">
+                <ul>
+                    <li id="mobile-menu"></li>
+                    <li><a href="#"></a></li>
+                    <li id="mobile-search"></li>
+                    <li id="mobile-basket"></li>
+                    <li><a href="#"></a></li>
+                    <li id="mobile-callback"></li>
+                </ul>
+            </div>
 			<div class="row">
 				<a href="#" class="header__logo">
 					<h1>Интернет-магазин «Благой арт»</h1>
@@ -50,11 +58,11 @@
 						<a href="#">ВОЙТИ</a>
 				</div>
 			</div>
-				<nav>
+				<nav id="header-nav">
 					<ul class ="header__main-menu">
 						<li class="deeper"><span>КАТАЛОГ ТОВАРОВ</span>
 							<ul>
-								<li class="deeper">
+								<li class="deepest">
 									<a href="#">Свадебная бижутерия</a>
 									<ul>
 										<li><span>Свадебная бижутерия</span></li>
@@ -67,7 +75,7 @@
 								</li>
 								<li><a href="#">Аксессуары для волос</a></li>
 								<li><a href="#">Броши</a></li>
-								<li class="deeper">
+								<li class="deepest">
 									<a href="#">Мужские аксессуары</a>
 									<ul>
 										<li><span>МУЖСКАЯ БИЖУТЕРИЯ</span></li>
@@ -96,15 +104,23 @@
 
 	<!-- BEGIN SLIDER -->
         <div class="slider">
-            <div class="slider__img-1">
-                <img src="" alt="">
+            <div class="slider__motto">
+                <h2>
+                    Новая коллекция SWAROVSKI уже здесь!
+                </h2>
             </div>
-            <div class="slider__img-2">
-                <img src="" alt="">
+            <div class="slider__inner">
+                <div>
+                    <img src="./img/slider_img_1.png" alt="test">
+                </div>
+                <div>
+                    <img src="./img/slider_img_2.png" alt="test2">
+                </div>
+                <div>
+                    <img src="./img/slider_img_3.png" alt="test3">
+                </div>
             </div>
-            <div class="slider__img-2">
-                <img src="" alt="">
-            </div>
+
 
         </div>
 
@@ -119,7 +135,7 @@
 	
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 	<script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js" ></script>
-
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 	<script type="text/javascript" src="js/custom.js" ></script>
 </body>
 </html>
