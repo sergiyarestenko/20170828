@@ -98,7 +98,6 @@
 
 @media screen and (max-width: 991px){
   .slider{
-
     &__motto{
       top:calc(50% - 32px);
       left:40px;
@@ -127,11 +126,42 @@
       }
     }
     .slick-dots{
-      display: none;
+      display: none !important;
     }
   }
 }
 
 @media screen and (max-width: 767px) {
+  .slider{
+    margin-left:0;
+    margin-right:0;
+    &__motto{
+      top:calc(50% - 22px);
+      left:40px;
+      width: 192px;
+      height: 44px;
+      padding:6px 8px;
+      h2{
+        font-size:16px;
+      }
+    }
+    .slick-arrow{
+      z-index: 40;
+      position: absolute;
+      top:calc(50% - 14px);
+      left:0;
+      width: 20px;
+      height: 28px;
+      background-size: auto 14px;
+      &:hover{
+        background-size: auto 14px;
+      }
+      &.slick-next{
+        background-size: auto 14px;
+        &:hover{
+          background-size: auto 14px;        }
+      }
+    }
 
+  }
 }

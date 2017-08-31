@@ -32,14 +32,16 @@ $('.deepest').on('click',function () {
 $('#mobile-search').on('click',function () {
 	addShadow();
 	$('.header__search').addClass('open');
+	$('.header__search').append('<span class ="close" onclick="removeShadow()">закрыть</span>')
+	$('.header__search').show('slow');
 });
-
 
 
 function addShadow() {
 	$(document.body).append('<div class ="shadow" onclick="removeShadow()"></div>')
 }
 function removeShadow() {
+    $('.header__search').hide('fast');
 	$('.header__search').removeClass('open');
-	$('.shadow').remove();
+	$('.shadow').detach();
 }

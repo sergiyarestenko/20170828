@@ -392,8 +392,8 @@
             background: url("../img/callback_mobile_icon.png") no-repeat 50% 50%;
           }
           a{
-            display: block;
-            height: 100%;
+            //display: block;
+            //height: 100%;
           }
         }
       }
@@ -421,7 +421,6 @@
     &__search{
        display: none;
       &.open{
-        display: block;
         position: fixed;
         left: 10%;
         top: 0;
@@ -431,9 +430,15 @@
         background: $bg-main;
         padding: 50px 25px;
         border-radius: 5px;
-
+        .close{
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          color: $color-middle-grey;
+          font-size:12px;
+          cursor: pointer;
+        }
       }
-
     }
     &__contacts{
       display: none;
@@ -447,13 +452,13 @@
       border: none;
       position: absolute;
       top:40px;
+      left: -250px;
       z-index: 50;
       background: $bg-main;
-      height: 0;
       overflow: hidden;
-      transition: heigth .5s ;
+      transition: .5s ;
       &.open{
-        height: auto;
+        left:0;
         box-shadow: 2px 2px $color-light-grey;
       }
       }
@@ -558,4 +563,22 @@
       }
     }
     }
+}
+
+@media screen and (max-width: 400px) {
+  .header{
+    &__search{
+      &.open{
+        position: fixed;
+        left: 5%;
+        top: 0;
+        z-index: 501;
+        width: 90%;
+        margin: 25px auto;
+        background: $bg-main;
+        padding: 50px 15px;
+        border-radius: 5px;
+      }
+    }
+  }
 }
